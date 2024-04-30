@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack",
-    "start": "cross-env NODE_ENV=development webpack serve"
+    "build": "cross-env NODE_ENV=production webpack --config ./src/shared/config/webpack/webpack.config.ts",
+    "start": "cross-env NODE_ENV=development webpack serve --config ./src/shared/config/webpack/webpack.config.ts"
   },
   "devDependencies": {
     "@types/node": "20.12.7",

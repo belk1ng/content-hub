@@ -1,20 +1,6 @@
-import {createContext, useState, useMemo, useEffect} from "react";
-import type {FC, PropsWithChildren, Dispatch, SetStateAction} from "react";
-
-export enum Theme {
-    LIGHT = "light",
-    DARK = "dark",
-}
-
-interface ThemeContextValues {
-    theme: Theme;
-    setTheme: Dispatch<SetStateAction<Theme>>;
-    toggleTheme: VoidFunction;
-}
-
-export const LS_THEME_KEY = "theme";
-
-export const ThemeContext = createContext<ThemeContextValues>(null);
+import type {FC, PropsWithChildren} from "react";
+import {useState, useMemo, useEffect} from "react";
+import {Theme, ThemeContext, LS_THEME_KEY} from "../config/Theme.context";
 
 const defaultTheme = (localStorage.getItem(LS_THEME_KEY)) as Theme ?? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? Theme.DARK : Theme.LIGHT);
 

@@ -1,5 +1,5 @@
-import type { Configuration } from "webpack";
-import { common, devServer, config as env } from "./config/webpack";
+import type {Configuration} from "webpack";
+import {common, devServer, config as env} from "./index";
 
 const isDevMode = env.IS_DEV
 

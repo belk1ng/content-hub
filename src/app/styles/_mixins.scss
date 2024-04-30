@@ -1,0 +1,68 @@
+// Flex mixins
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-center-column {
+  @include flex-center;
+  flex-direction: column;
+}
+
+@mixin flex-center-y {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-center-x {
+  display: flex;
+  justify-content: center;
+}
+
+// Reset
+@mixin reset-link {
+  color: inherit;
+
+  &,
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+@mixin reset-button {
+  padding: 0;
+  border: 0;
+}
+
+// Other
+@mixin square-size($size) {
+  width: $size;
+  aspect-ratio: 1;
+}
+
+@mixin cover-background($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@mixin hover() {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+
+  @media (hover: none) {
+    &:active {
+      @content;
+    }
+  }
+}

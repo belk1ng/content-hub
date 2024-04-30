@@ -9,11 +9,18 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "noImplicitAny": true,
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
   },
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
     }
   },
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }

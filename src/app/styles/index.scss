@@ -1,0 +1,41 @@
+@import "globals";
+@import "themes/dark";
+@import "themes/light";
+
+body {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+#root {
+  isolation: isolate;
+}
+
+.app {
+  font: var(--font-m);
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+
+  min-height: 100dvh;
+}

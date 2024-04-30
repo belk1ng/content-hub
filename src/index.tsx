@@ -1,7 +1,7 @@
 import {createRoot} from 'react-dom/client';
 import {StrictMode} from "react";
-import App from "./App";
-import {ThemeProvider} from "./providers/Theme.provider";
+import App from "./app/App";
+import {ThemeProvider} from "@/entities/theme/ui/Theme.provider";
 
 const container = document.getElementById("root");
 if (!container) {
