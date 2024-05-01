@@ -55,6 +55,22 @@
   line-height: clamp(#{$min + 8}px, #{calc(($max + 8) / 1280 * 100)}vw, #{$max + 8}px);
 }
 
+@mixin font-size-24 {
+  @include fluid-text(18, 24);
+}
+
+@mixin font-size-16 {
+  @include fluid-text(14, 16);
+}
+
+@mixin font-size-14 {
+  @include fluid-text(12, 14);
+}
+
+@mixin font-size-12 {
+  @include fluid-text(12, 12);
+}
+
 // Other
 @mixin square-size($size) {
   width: $size;

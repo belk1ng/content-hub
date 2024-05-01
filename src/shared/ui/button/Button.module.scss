@@ -1,0 +1,70 @@
+@import "@/app/styles/mixins";
+
+$block: ".button";
+
+#{$block} {
+  @include reset-button;
+  @include font-size-12;
+
+  cursor: pointer;
+  font-weight: 600;
+
+  border-radius: 0.5833em;
+
+  &_contained {
+    background-color: var(--button-contained-normal-bg);
+    color: var(--button-contained-normal-color);
+    border: var(--button-contained-normal-border);
+
+    @include hover {
+      background-color: var(--button-contained-hover-bg);
+      color: var(--button-contained-hover-color);
+      border: var(--button-contained-hover-border);
+    }
+
+    &:active {
+      background-color: var(--button-contained-pressed-bg);
+      color: var(--button-contained-pressed-color);
+      border: var(--button-contained-pressed-border);
+    }
+  }
+
+  &_outlined {
+    background-color: var(--button-outlined-normal-bg);
+    color: var(--button-outlined-normal-color);
+    border: var(--button-outlined-normal-border);
+
+    @include hover {
+      background-color: var(--button-outlined-hover-bg);
+      color: var(--button-outlined-hover-color);
+      border: var(--button-outlined-hover-border);
+    }
+
+    &:active {
+      background-color: var(--button-outlined-pressed-bg);
+      color: var(--button-outlined-pressed-color);
+      border: var(--button-outlined-pressed-border);
+    }
+  }
+
+  &_light {
+    background-color: var(--white);
+    color: var(--button-normal);
+
+    @include hover {
+      color: var(--button-hover);
+    }
+
+    &:active {
+      color: var(--button-pressed);
+    }
+  }
+
+  &_small {
+    padding: 0.5833em 2.916em;
+  }
+
+  &_large {
+    padding: 0.8333em 2.5em;
+  }
+}

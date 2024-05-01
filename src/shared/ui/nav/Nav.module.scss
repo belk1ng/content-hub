@@ -1,0 +1,29 @@
+@import "@/app/styles/mixins";
+
+$block: ".nav";
+
+.nav {
+  @include font-size-16;
+  background-color: var(--main-primary);
+
+  &__list {
+    @include flex-column;
+    gap: 0.5em;
+  }
+
+  &__item {
+    @include reset-link;
+
+    color: var(--white);
+    padding: 0.625em 1.875em;
+    border-radius: 0.375em;
+
+    &_active {
+      background-color: var(--main-secondary);
+    }
+
+    @include hover {
+      background-color: var(--main-secondary);
+    }
+  }
+}

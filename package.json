@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "@bem-react/classname": "1.6.0",
+    "clsx": "2.1.1",
     "dotenv": "16.4.5",
     "install": "0.13.0",
     "npm": "10.6.0",

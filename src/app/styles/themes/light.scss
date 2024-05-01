@@ -2,7 +2,7 @@
   --main-primary: hsl(189, 37%, 22%);
   --main-secondary: hsl(188, 28%, 30%);
 
-  --bg-color: hsl(0, 0%, 99%);
+  --bg-color: var(--white);
 
   --accent-primary: hsl(10, 87%, 59%);
   --accent-secondary: hsl(0, 57%, 50%);
@@ -17,4 +17,24 @@
   --button-normal: hsl(188, 28%, 30%);
   --button-hover: hsl(188, 37%, 40%);
   --button-pressed: hsl(189, 45%, 17%);
+
+  --button-contained-normal-color: var(--white);
+  --button-contained-hover-color: var(--white);
+  --button-contained-pressed-color: var(--white);
+  --button-contained-normal-bg: var(--button-normal);
+  --button-contained-hover-bg: var(--button-hover);
+  --button-contained-pressed-bg: var(--button-pressed);
+  --button-contained-normal-border: 1px solid var(--button-normal);
+  --button-contained-hover-border: 1px solid var(--button-hover);
+  --button-contained-pressed-border: 1px solid var(--button-pressed);
+
+  --button-outlined-normal-color: var(--button-normal);
+  --button-outlined-hover-color: var(--button-hover);
+  --button-outlined-pressed-color: var(--button-pressed);
+  --button-outlined-normal-bg: var(--white);
+  --button-outlined-hover-bg: var(--white);
+  --button-outlined-pressed-bg: var(--white);
+  --button-outlined-normal-border: 1px solid var(--button-normal);
+  --button-outlined-hover-border: 1px solid var(--button-hover);
+  --button-outlined-pressed-border: 1px solid var(--button-pressed);
 }

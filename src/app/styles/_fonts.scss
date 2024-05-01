@@ -7,19 +7,3 @@
 :root {
   --font-family: "Inter", sans-serif;
 }
-
-@mixin font-size-24 {
-  @include fluid-text(18, 24);
-}
-
-@mixin font-size-16 {
-  @include fluid-text(14, 16);
-}
-
-@mixin font-size-14 {
-  @include fluid-text(12, 14);
-}
-
-@mixin font-size-12 {
-  @include fluid-text(12, 12);
-}
