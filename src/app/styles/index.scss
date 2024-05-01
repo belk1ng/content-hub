@@ -1,6 +1,6 @@
-@import "globals";
 @import "themes/dark";
 @import "themes/light";
+@import "fonts";
 
 body {
   box-sizing: border-box;
@@ -33,9 +33,11 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .app {
-  font: var(--font-m);
+  font-family: var(--font-family);
+  @include font-size-16;
+
   background-color: var(--bg-color);
-  color: var(--primary-color);
+  color: var(--text-primary);
 
   min-height: 100dvh;
 }

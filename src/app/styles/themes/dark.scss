@@ -1,6 +1,20 @@
 .app_dark {
-  --bg-color: #090949;
+  --main-primary: hsl(189, 37%, 22%);
+  --main-secondary: hsl(189, 45%, 17%);
 
-  --primary-color: #049604;
-  --secondary-color: #04ff04;
+  --bg-color: hsl(0, 0%, 15%);
+
+  --accent-primary: hsl(10, 87%, 59%);
+  --accent-secondary: hsl(0, 94%, 73%);
+
+  --text-primary: hsl(0, 0%, 99%);
+  --text-secondary-light: hsl(0, 0%, 57%);
+  --text-secondary-dark: hsl(0, 0%, 44%);
+
+  --input-bg-normal: hsl(0, 0%, 27%);
+  --input-bg-pressed: hsl(0, 0%, 38%);
+
+  --button-normal: hsl(0, 0%, 15%);
+  --button-hover: hsl(0, 0%, 15%);
+  --button-pressed: hsl(0, 0%, 10%);
 }

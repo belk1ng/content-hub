@@ -40,6 +40,21 @@
   border: 0;
 }
 
+// Fonts
+@mixin font-face($font-name, $path, $weight) {
+  @font-face {
+    font-family: quote($font-name);
+    src: url($path + ".woff2") format("woff2") url($path + ".ttf") format("ttf");
+    font-weight: $weight;
+    font-style: normal;
+  }
+}
+
+@mixin fluid-text($min, $max) {
+  font-size: clamp(#{$min}px, #{calc($max / 1480 * 100)}vw, #{$max}px);
+  line-height: clamp(#{$min + 8}px, #{calc(($max + 8) / 1280 * 100)}vw, #{$max + 8}px);
+}
+
 // Other
 @mixin square-size($size) {
   width: $size;
