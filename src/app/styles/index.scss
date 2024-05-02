@@ -16,21 +16,46 @@ body {
   padding: 0;
 }
 
-img, picture, video, canvas, svg {
+:where(ul[class]) {
+  list-style: none;
+}
+
+img {
   display: block;
   max-width: 100%;
 }
 
-input, button, textarea, select {
+input,
+textarea,
+select,
+button {
   font: inherit;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
-  overflow-wrap: break-word;
+html,
+:has(:target) {
+  scroll-behavior: smooth;
 }
 
-#root {
-  isolation: isolate;
+svg *[fill] {
+  fill: currentColor
+}
+
+svg *[stroke] {
+  stroke: currentColor
+}
+
+svg * {
+  transition-property: fill, stroke;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 .app {

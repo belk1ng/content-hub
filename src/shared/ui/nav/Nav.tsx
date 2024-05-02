@@ -11,6 +11,7 @@ const Nav: FC<NavProps> = ({links, className, ...rest}) => {
                 {links.map((link) =>
                     <NavLink to={link.to} key={link.to}
                              className={({isActive}) => clsx(classes.nav__item, {[classes.nav__item_active]: isActive})}>
+                        {link.icon}
                         {link.title}
                     </NavLink>
                 )}

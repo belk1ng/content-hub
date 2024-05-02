@@ -3,8 +3,7 @@
 $block: ".nav";
 
 .nav {
-  @include font-size-16;
-  background-color: var(--main-primary);
+  color: var(--white);
 
   &__list {
     @include flex-column;
@@ -13,8 +12,9 @@ $block: ".nav";
 
   &__item {
     @include reset-link;
+    @include flex-center-y;
+    gap: 0.5em;
 
-    color: var(--white);
     padding: 0.625em 1.875em;
     border-radius: 0.375em;
 
