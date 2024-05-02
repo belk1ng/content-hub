@@ -1,0 +1,14 @@
+@import "@/app/styles/mixins";
+
+$block: ".layout";
+
+#{$block} {
+  display: flex;
+
+  &__content {
+    @include flex-column;
+
+    flex: 1 1 auto;
+    padding: 2em;
+  }
+}

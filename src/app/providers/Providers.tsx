@@ -1,5 +1,5 @@
 import type {FC, PropsWithChildren} from "react";
-import {ThemeProvider} from "../../entities/theme/ui/Theme.provider";
+import {ThemeProvider} from "@/entities/theme";
 import {StrictMode} from "react";
 
 const Providers: FC<PropsWithChildren> = ({children}) => {

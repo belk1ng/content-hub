@@ -1,25 +1,29 @@
-import {lazy, Suspense} from "react";
+import {lazy} from "react";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import Layout from "@/app/layout";
 
 const MainPage = lazy(() => import("../../pages/main"))
 const AboutPage = lazy(() => import("../../pages/about"))
 
 const router = createBrowserRouter([
     {
-        path: "/",
-        element: <MainPage/>
+        element: <Layout/>,
+        children: [
+            {
+                path: "/",
+                element: <MainPage/>
+            },
+            {
+                path: "/about",
+                element: <AboutPage/>
+            }
+        ]
     },
-    {
-        path: "/about",
-        element: <AboutPage/>
-    }
 ])
 
 const Router = () => {
     return (
-        <Suspense fallback={<p>Loading...</p>}>
-            <RouterProvider router={router}/>
-        </Suspense>
+        <RouterProvider router={router}/>
     )
 }
 
