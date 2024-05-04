@@ -1,6 +1,6 @@
 import type {ButtonHTMLAttributes, ReactNode} from "react";
 
-type ButtonVariant = "contained" | "outlined" | "light"
+type ButtonVariant = "contained" | "outlined" | "light" | "action";
 
 type ButtonSize = "small" | "large";
 

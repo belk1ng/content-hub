@@ -67,4 +67,12 @@ $block: ".button";
   &_large {
     padding: 0.8333em 2.5em;
   }
+
+  &_action {
+    @include flex-center;
+
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+  }
 }

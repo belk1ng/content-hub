@@ -1,0 +1,15 @@
+@import "@/app/styles/mixins";
+
+$block: ".toggle";
+
+#{$block} {
+  @include flex-center;
+  @include square-size(30px);
+
+  @include font-size-12;
+  font-weight: 600;
+
+  color: var(--text-primary);
+  border: 1px solid var(--text-primary);
+  border-radius: 50%;
+}
