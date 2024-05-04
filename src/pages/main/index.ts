@@ -1,1 +1,1 @@
-export {default} from "./ui/Main"
+export {default} from "./lib/Main.lazy"
