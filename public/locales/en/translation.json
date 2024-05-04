@@ -1,0 +1,19 @@
+{
+  "homepage": {
+    "title": "Home page"
+  },
+  "about": {
+    "title": "About page"
+  },
+  "actions": {
+    "create": {
+      "article": "Create an article"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "articles": "Articles",
+    "profile": "Profile",
+    "about": "About"
+  }
+}

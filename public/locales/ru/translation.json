@@ -1,0 +1,19 @@
+{
+  "homepage": {
+    "title": "Главная страница"
+  },
+  "about": {
+    "title": "О сайте"
+  },
+  "actions": {
+    "create": {
+      "article": "Создать статью"
+    }
+  },
+  "nav": {
+    "home": "Главная",
+    "articles": "Статьи",
+    "profile": "Профиль",
+    "about": "О сайте"
+  }
+}

@@ -5,22 +5,22 @@ import AboutIcon from "@/shared/assets/icons/about.svg";
 
 export const navConfig = [
     {
-        title: "Главная",
+        titleTranslationKey: "nav.home",
         to: "/",
         icon: <HomeIcon/>
     },
     {
-        title: "Статьи",
+        titleTranslationKey: "nav.articles",
         to: "/articles",
         icon: <ArticlesIcon/>
     },
     {
-        title: "Профиль",
+        titleTranslationKey: "nav.profile",
         to: "/me",
         icon: <ProfileIcon/>
     },
     {
-        title: "О сайте",
+        titleTranslationKey: "nav.about",
         to: "/about",
         icon: <AboutIcon/>
     },
