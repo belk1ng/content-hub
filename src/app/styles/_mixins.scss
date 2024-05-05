@@ -52,7 +52,11 @@
 
 @mixin fluid-text($min, $max) {
   font-size: clamp(#{$min}px, #{calc($max / 1480 * 100)}vw, #{$max}px);
-  line-height: clamp(#{$min + 8}px, #{calc(($max + 8) / 1280 * 100)}vw, #{$max + 8}px);
+  line-height: clamp(
+    #{$min + 8}px,
+    #{calc(($max + 8) / 1280 * 100)}vw,
+    #{$max + 8}px
+  );
 }
 
 @mixin font-size-24 {

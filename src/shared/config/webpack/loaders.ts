@@ -1,6 +1,5 @@
-import {typeScript, styles, files, svg} from "./_modules";
-import type {RuleSetRule} from "webpack";
+import type { RuleSetRule } from "webpack";
 
-export const loaders: RuleSetRule[] = [
-    typeScript, styles, files, svg
-]
+import { typeScript, styles, files, svg } from "./_modules";
+
+export const loaders: RuleSetRule[] = [typeScript, styles, files, svg];

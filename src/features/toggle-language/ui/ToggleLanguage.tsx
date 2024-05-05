@@ -1,17 +1,25 @@
-import type {FC} from "react";
-import {useTranslation} from "react-i18next";
-import Button from "@/shared/ui/button";
-import useLanguage from "@/shared/lib/i18n";
+import type { FC } from "react";
+import { useTranslation } from "react-i18next";
+
 import * as classes from "./ToggleLanguage.module.scss";
 
+import useLanguage from "@/shared/lib/i18n";
+import Button from "@/shared/ui/button";
+
 const ToggleLanguage: FC = () => {
-    const {t} = useTranslation()
+  const { t } = useTranslation();
 
-    const {toggleLanguage} = useLanguage();
+  const { toggleLanguage } = useLanguage();
 
-    return (
-        <Button variant="action" onClick={toggleLanguage} className={classes.toggle}>{t("language")}</Button>
-    )
-}
+  return (
+    <Button
+      className={classes.toggle}
+      onClick={toggleLanguage}
+      variant="action"
+    >
+      {t("language")}
+    </Button>
+  );
+};
 
-export default ToggleLanguage
+export default ToggleLanguage;

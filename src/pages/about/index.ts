@@ -1,1 +1,1 @@
-export {default} from "./lib/About.lazy"
+export { default } from "./lib/About.lazy";

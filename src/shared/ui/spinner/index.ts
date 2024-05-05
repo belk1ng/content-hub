@@ -1,1 +1,1 @@
-export {default} from "./ui/Spinner"
+export { default } from "./ui/Spinner";

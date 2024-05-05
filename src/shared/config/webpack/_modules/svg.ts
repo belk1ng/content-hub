@@ -1,4 +1,4 @@
 export const svg = {
-    test: /\.svg$/,
-    use: ['@svgr/webpack'],
-}
+  test: /\.svg$/,
+  use: ["@svgr/webpack"],
+};

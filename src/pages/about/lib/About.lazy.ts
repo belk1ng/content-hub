@@ -1,5 +1,5 @@
-import {lazy} from "react";
+import { lazy } from "react";
 
-const AboutPage = lazy(() => import("../ui/About"))
+const AboutPage = lazy(() => import("../ui/About"));
 
 export default AboutPage;

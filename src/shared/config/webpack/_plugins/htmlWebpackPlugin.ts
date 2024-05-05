@@ -1,7 +1,9 @@
-import HtmlWebpackPlugin from "html-webpack-plugin";
 import path from "path";
-import {paths} from "../paths";
+
+import HtmlWebpackPlugin from "html-webpack-plugin";
+
+import { paths } from "../paths";
 
 export const htmlWebpackPlugin = new HtmlWebpackPlugin({
-    template: path.resolve(paths.public, "index.html")
-})
+  template: path.resolve(paths.public, "index.html"),
+});

@@ -1,1 +1,1 @@
-export {default} from "./lib/Profile.lazy"
+export { default } from "./lib/Profile.lazy";

@@ -10,9 +10,7 @@
     "allowJs": true,
     "noImplicitAny": true,
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"]
     }
   },
   "ts-node": {
@@ -20,8 +18,5 @@
       "module": "CommonJS"
     }
   },
-  "exclude": [
-    "node_modules",
-    "eslint.config.mjs"
-  ]
+  "exclude": ["node_modules", "eslint.config.mjs"]
 }

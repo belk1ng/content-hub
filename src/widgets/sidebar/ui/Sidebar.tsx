@@ -1,24 +1,28 @@
 import clsx from "clsx";
-import {useTranslation} from "react-i18next";
-import type {FC} from "react";
-import Nav from "@/shared/ui/nav";
-import {navConfig} from "@/shared/config/nav";
-import Button from "@/shared/ui/button";
-import type {SidebarProps} from "./Sidebar.props";
+import type { FC } from "react";
+import { useTranslation } from "react-i18next";
+
 import * as classes from "./Sidebar.module.scss";
+import type { SidebarProps } from "./Sidebar.props";
 
-const Sidebar: FC<SidebarProps> = ({className, ...rest}) => {
-    const {t} = useTranslation();
+import { navConfig } from "@/shared/config/nav";
+import Button from "@/shared/ui/button";
+import Nav from "@/shared/ui/nav";
 
-    return (
-        <aside className={clsx(classes.sidebar, className)} {...rest}>
-            <div className={classes.sidebar__content}>
-                <h1 className={classes.sidebar__title}>Content Hub</h1>
-                <Nav links={navConfig}/>
-            </div>
-            <Button variant="light" size="large">{t("actions.create.article")}</Button>
-        </aside>
-    )
-}
+const Sidebar: FC<SidebarProps> = ({ className, ...rest }) => {
+  const { t } = useTranslation();
+
+  return (
+    <aside className={clsx(classes.sidebar, className)} {...rest}>
+      <div className={classes.sidebar__content}>
+        <h1 className={classes.sidebar__title}>Content Hub</h1>
+        <Nav links={navConfig} />
+      </div>
+      <Button size="large" variant="light">
+        {t("actions.create.article")}
+      </Button>
+    </aside>
+  );
+};
 
 export default Sidebar;

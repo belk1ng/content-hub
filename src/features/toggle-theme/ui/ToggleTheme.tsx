@@ -1,17 +1,19 @@
-import type {FC} from "react";
-import {useTheme} from "@/entities/theme";
-import Button from "@/shared/ui/button";
-import ThemeIcon from "@/shared/assets/icons/theme.svg";
+import type { FC } from "react";
+
 import * as classes from "./ToggleTheme.module.scss";
 
-const ToggleTheme: FC = () => {
-    const {toggleTheme} = useTheme()
+import { useTheme } from "@/entities/theme";
+import ThemeIcon from "@/shared/assets/icons/theme.svg";
+import Button from "@/shared/ui/button";
 
-    return (
-        <Button variant="action" className={classes.toggle} onClick={toggleTheme}>
-            <ThemeIcon/>
-        </Button>
-    )
-}
+const ToggleTheme: FC = () => {
+  const { toggleTheme } = useTheme();
+
+  return (
+    <Button className={classes.toggle} onClick={toggleTheme} variant="action">
+      <ThemeIcon />
+    </Button>
+  );
+};
 
 export default ToggleTheme;

@@ -1,1 +1,1 @@
-export {default} from "./useLanguage"
+export { default } from "./useLanguage";

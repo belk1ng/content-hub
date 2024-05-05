@@ -11,11 +11,31 @@ $block: ".spinner";
   height: 8em;
   border-radius: 50%;
   background: #ffffff;
-  background: -moz-linear-gradient(left, var(--text-primary) 10%, rgba(255, 255, 255, 0) 42%);
-  background: -webkit-linear-gradient(left, var(--text-primary) 10%, rgba(255, 255, 255, 0) 42%);
-  background: -o-linear-gradient(left, var(--text-primary) 10%, rgba(255, 255, 255, 0) 42%);
-  background: -ms-linear-gradient(left, var(--text-primary) 10%, rgba(255, 255, 255, 0) 42%);
-  background: linear-gradient(to right, var(--text-primary) 10%, rgba(255, 255, 255, 0) 42%);
+  background: -moz-linear-gradient(
+    left,
+    var(--text-primary) 10%,
+    rgba(255, 255, 255, 0) 42%
+  );
+  background: -webkit-linear-gradient(
+    left,
+    var(--text-primary) 10%,
+    rgba(255, 255, 255, 0) 42%
+  );
+  background: -o-linear-gradient(
+    left,
+    var(--text-primary) 10%,
+    rgba(255, 255, 255, 0) 42%
+  );
+  background: -ms-linear-gradient(
+    left,
+    var(--text-primary) 10%,
+    rgba(255, 255, 255, 0) 42%
+  );
+  background: linear-gradient(
+    to right,
+    var(--text-primary) 10%,
+    rgba(255, 255, 255, 0) 42%
+  );
   position: relative;
   -webkit-animation: load3 1.4s infinite linear;
   animation: load3 1.4s infinite linear;
@@ -31,7 +51,7 @@ $block: ".spinner";
     position: absolute;
     top: 0;
     left: 0;
-    content: '';
+    content: "";
   }
 
   &:after {
@@ -39,7 +59,7 @@ $block: ".spinner";
     width: 75%;
     height: 75%;
     border-radius: 50%;
-    content: '';
+    content: "";
     margin: auto;
     position: absolute;
     top: 0;

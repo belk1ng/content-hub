@@ -1,13 +1,15 @@
-import type {FC} from "react";
+import type { FC } from "react";
+
+import * as classes from "./Loader.module.scss";
+
 import Spinner from "@/shared/ui/spinner";
-import * as classes from "./Loader.module.scss"
 
 const Loader: FC = () => {
-    return (
-        <section className={classes.loader}>
-            <Spinner/>
-        </section>
-    )
-}
+  return (
+    <section className={classes.loader}>
+      <Spinner />
+    </section>
+  );
+};
 
-export default Loader
+export default Loader;
