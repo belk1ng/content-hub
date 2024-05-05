@@ -4,6 +4,7 @@ import {Outlet} from "react-router-dom";
 import clsx from "clsx";
 import Sidebar from "@/widgets/sidebar";
 import Header from "@/widgets/header";
+import Loader from "@/widgets/loader";
 import {useTheme} from "@/entities/theme";
 import * as classes from "./Layout.module.scss";
 
@@ -14,7 +15,7 @@ const Layout: FC = () => {
         <div className={clsx(`app app_${theme}`, classes.layout)}>
             <Sidebar/>
             <main className={classes.layout__content}>
-                <Suspense fallback={<p>Loading...</p>}>
+                <Suspense fallback={<Loader/>}>
                     <Header/>
                     <Outlet/>
                 </Suspense>

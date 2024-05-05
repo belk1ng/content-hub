@@ -6,6 +6,12 @@
   "about": {
     "title": "About page"
   },
+  "articles": {
+    "title": "Articles page"
+  },
+  "profile": {
+    "title": "Profile page"
+  },
   "actions": {
     "create": {
       "article": "Create an article"
@@ -16,5 +22,8 @@
     "articles": "Articles",
     "profile": "Profile",
     "about": "About"
+  },
+  "errors": {
+    "404": "Page not found :("
   }
 }

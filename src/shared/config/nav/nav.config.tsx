@@ -3,25 +3,33 @@ import ArticlesIcon from "@/shared/assets/icons/article.svg";
 import ProfileIcon from "@/shared/assets/icons/profile.svg";
 import AboutIcon from "@/shared/assets/icons/about.svg";
 
+export const routes = {
+    home: "/",
+    articles: "/articles",
+    profile: "/profile",
+    about: "/about",
+    notFound: "*",
+}
+
 export const navConfig = [
     {
         titleTranslationKey: "nav.home",
-        to: "/",
+        to: routes.home,
         icon: <HomeIcon/>
     },
     {
         titleTranslationKey: "nav.articles",
-        to: "/articles",
+        to: routes.articles,
         icon: <ArticlesIcon/>
     },
     {
         titleTranslationKey: "nav.profile",
-        to: "/me",
+        to: routes.profile,
         icon: <ProfileIcon/>
     },
     {
         titleTranslationKey: "nav.about",
-        to: "/about",
+        to: routes.about,
         icon: <AboutIcon/>
     },
 ]

@@ -6,6 +6,12 @@
   "about": {
     "title": "О сайте"
   },
+  "articles": {
+    "title": "Статьи"
+  },
+  "profile": {
+    "title": "Профиль"
+  },
   "actions": {
     "create": {
       "article": "Создать статью"
@@ -16,5 +22,8 @@
     "articles": "Статьи",
     "profile": "Профиль",
     "about": "О сайте"
+  },
+  "errors": {
+    "404": "Страница не найдена :("
   }
 }

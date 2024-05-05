@@ -4,7 +4,7 @@ const AboutPage = () => {
     const {t} = useTranslation()
 
     return (
-        <main><h1>{t("about.title")}</h1></main>
+        <h2>{t("about.title")}</h2>
     )
 }
 

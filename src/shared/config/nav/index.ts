@@ -1,2 +1,2 @@
-export {navConfig} from "./nav.config"
+export {navConfig, routes} from "./nav.config"
 export type {NavConfig} from "./nav.config"
