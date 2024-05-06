@@ -1,23 +1,17 @@
 .app_dark {
-  --main-primary: hsl(189, 37%, 22%);
-  --main-secondary: hsl(189, 45%, 17%);
-
-  --bg-color: hsl(0, 0%, 15%);
-
-  --accent-primary: hsl(10, 87%, 59%);
-  --accent-secondary: hsl(0, 94%, 73%);
-
+  --main-primary: hsl(189deg 37% 22%);
+  --main-secondary: hsl(189deg 45% 17%);
+  --bg-color: hsl(0deg 0% 15%);
+  --accent-primary: hsl(10deg 87% 59%);
+  --accent-secondary: hsl(0deg 94% 73%);
   --text-primary: var(--white);
-  --text-secondary-light: hsl(0, 0%, 57%);
-  --text-secondary-dark: hsl(0, 0%, 44%);
-
-  --input-bg-normal: hsl(0, 0%, 27%);
-  --input-bg-pressed: hsl(0, 0%, 38%);
-
-  --button-normal: hsl(0, 0%, 15%);
-  --button-hover: hsl(0, 0%, 21%);
-  --button-pressed: hsl(0, 0%, 10%);
-
+  --text-secondary-light: hsl(0deg 0% 57%);
+  --text-secondary-dark: hsl(0deg 0% 44%);
+  --input-bg-normal: hsl(0deg 0% 27%);
+  --input-bg-pressed: hsl(0deg 0% 38%);
+  --button-normal: hsl(0deg 0% 15%);
+  --button-hover: hsl(0deg 0% 21%);
+  --button-pressed: hsl(0deg 0% 10%);
   --button-contained-normal-color: var(--button-normal);
   --button-contained-hover-color: var(--button-hover);
   --button-contained-pressed-color: var(--button-pressed);
@@ -27,7 +21,6 @@
   --button-contained-normal-border: 1px solid var(--white);
   --button-contained-hover-border: var(--button-contained-normal-border);
   --button-contained-pressed-border: var(--button-contained-normal-border);
-
   --button-outlined-normal-color: var(--white);
   --button-outlined-hover-color: var(--button-outlined-normal-color);
   --button-outlined-pressed-color: var(--button-outlined-normal-color);

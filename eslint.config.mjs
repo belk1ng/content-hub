@@ -6,6 +6,7 @@ import reactHooksPlugin from "eslint-plugin-react-hooks";
 import importOrderPlugin from "eslint-plugin-import";
 import prettierConfig from "eslint-config-prettier";
 import eslintPluginPrettier from "eslint-plugin-prettier";
+import i18nPlugin from "eslint-plugin-i18next";
 
 export default [
   { languageOptions: { globals: globals.browser } },
@@ -18,8 +19,10 @@ export default [
       "react-hooks": reactHooksPlugin,
       import: importOrderPlugin,
       prettier: eslintPluginPrettier,
+      "i18next": i18nPlugin
     },
     rules: {
+      "i18next/no-literal-string": 2,
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
       "react/prefer-stateless-function": "error",
@@ -33,19 +36,19 @@ export default [
       "react/destructuring-assignment": [
         "error",
         "always",
-        { destructureInSignature: "always" },
+        { destructureInSignature: "always" }
       ],
       "react/function-component-definition": [
         "warn",
-        { namedComponents: "arrow-function" },
+        { namedComponents: "arrow-function" }
       ],
       "react/jsx-key": [
         "error",
         {
           checkFragmentShorthand: true,
           checkKeyMustBeforeSpread: true,
-          warnOnDuplicates: true,
-        },
+          warnOnDuplicates: true
+        }
       ],
       "react/jsx-no-useless-fragment": "warn",
       "react/jsx-curly-brace-presence": "warn",
@@ -65,15 +68,15 @@ export default [
             "internal",
             ["sibling", "parent"],
             "index",
-            "unknown",
+            "unknown"
           ],
           "newlines-between": "always",
           alphabetize: {
             order: "asc",
-            caseInsensitive: true,
-          },
-        },
-      ],
-    },
-  },
+            caseInsensitive: true
+          }
+        }
+      ]
+    }
+  }
 ];

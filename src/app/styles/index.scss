@@ -9,8 +9,8 @@ body {
 }
 
 *,
-*:after,
-*:before {
+*::after,
+*::before {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
@@ -38,11 +38,11 @@ html,
 }
 
 svg *[fill] {
-  fill: currentColor;
+  fill: currentcolor;
 }
 
 svg *[stroke] {
-  stroke: currentColor;
+  stroke: currentcolor;
 }
 
 svg * {
@@ -51,19 +51,18 @@ svg * {
 
 @media (prefers-reduced-motion: reduce) {
   * {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
   }
 }
 
 .app {
-  font-family: var(--font-family);
   @include font-size-16;
 
-  background-color: var(--bg-color);
-  color: var(--text-primary);
-
   min-height: 100dvh;
+  font-family: var(--font-family);
+  color: var(--text-primary);
+  background-color: var(--bg-color);
 }

@@ -15,7 +15,7 @@ const Sidebar: FC<SidebarProps> = ({ className, ...rest }) => {
   return (
     <aside className={clsx(classes.sidebar, className)} {...rest}>
       <div className={classes.sidebar__content}>
-        <h1 className={classes.sidebar__title}>Content Hub</h1>
+        <h1 className={classes.sidebar__title}>{t("app")}</h1>
         <Nav links={navConfig} />
       </div>
       <Button size="large" variant="light">

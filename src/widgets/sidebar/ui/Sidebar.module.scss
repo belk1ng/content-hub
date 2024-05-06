@@ -5,17 +5,20 @@ $block: ".sidebar";
 #{$block} {
   @include font-size-16;
   @include flex-column;
+
   justify-content: space-between;
 
   width: 14.75em;
   height: 100dvh;
-  background-color: var(--main-primary);
   padding: 1.875em 0.625em;
-  border-bottom-right-radius: 0.625em;
+
+  background-color: var(--main-primary);
   border-top-right-radius: 0.625em;
+  border-bottom-right-radius: 0.625em;
 
   &__content {
     @include flex-column;
+
     gap: 1.1875em;
   }
 
