@@ -1,12 +1,9 @@
 @import "@/app/styles/mixins";
 
-$block: ".toggle";
+$block: "button.toggle";
 
 #{$block} {
-  @include flex-center;
   @include square-size(30px);
-
-  @include font-size-12;
 
   font-weight: 600;
   color: var(--text-primary);
