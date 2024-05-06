@@ -11,7 +11,6 @@ $block: ".button";
   border-radius: 0.5833em;
 
   &_contained {
-
     @include hover {
       color: var(--button-contained-hover-color);
       background-color: var(--button-contained-hover-bg);
@@ -30,7 +29,6 @@ $block: ".button";
   }
 
   &_outlined {
-
     @include hover {
       color: var(--button-outlined-hover-color);
       background-color: var(--button-outlined-hover-bg);
@@ -49,7 +47,6 @@ $block: ".button";
   }
 
   &_light {
-
     @include hover {
       color: var(--button-hover);
     }

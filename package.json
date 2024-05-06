@@ -13,6 +13,7 @@
     "fix:styles": "stylelint --fix \"**/*.scss\"",
     "stylelint-scss-check": "stylelint-config-prettier-scss-check",
     "format": "prettier . --write && npm run fix:ts && npm run fix:styles",
+    "lint:all": "npm run lint:ts && npm run lint:styles",
     "test": "jest --config ./src/shared/config/jest/jest.config.ts"
   },
   "devDependencies": {
