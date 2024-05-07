@@ -13,16 +13,19 @@ const Nav: FC<NavProps> = ({ links, className, ...rest }) => {
     <nav className={clsx(classes.nav, className)} {...rest}>
       <ul className={classes.nav__list}>
         {links.map((link) => (
-          <NavLink
-            className={({ isActive }) =>
-              clsx(classes.nav__item, { [classes.nav__item_active]: isActive })
-            }
-            key={link.to}
-            to={link.to}
-          >
-            {link.icon}
-            {t(link.titleTranslationKey)}
-          </NavLink>
+          <li key={link.to}>
+            <NavLink
+              className={({ isActive }) =>
+                clsx(classes.nav__item, {
+                  [classes.nav__item_active]: isActive,
+                })
+              }
+              to={link.to}
+            >
+              {link.icon}
+              {t(link.titleTranslationKey)}
+            </NavLink>
+          </li>
         ))}
       </ul>
     </nav>

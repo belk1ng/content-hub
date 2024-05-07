@@ -80,4 +80,11 @@ export default [
       ],
     },
   },
+  {
+    files: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
+    rules: {
+      "i18next/no-literal-string": "off",
+      "react-hooks/rules-of-hooks": "off",
+    },
+  },
 ];
