@@ -8,6 +8,9 @@ const config: Config = {
   testEnvironment: "jest-environment-jsdom",
   preset: "ts-jest",
   testMatch: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[tj]s?(x)"],
+  moduleNameMapper: {
+    "@/(.*)": "<rootDir>/src/$1",
+  },
 };
 
 export default config;

@@ -6,6 +6,7 @@ import {
   miniCssExtractPlugin,
   definePlugin,
   hotModuleReplacement,
+  bundleAnalyzerPlugin,
 } from "./_plugins";
 
 export const plugins: WebpackPluginInstance[] = [
@@ -14,4 +15,5 @@ export const plugins: WebpackPluginInstance[] = [
   miniCssExtractPlugin,
   definePlugin,
   hotModuleReplacement,
+  bundleAnalyzerPlugin,
 ];
