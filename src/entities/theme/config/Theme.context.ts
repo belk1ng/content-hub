@@ -8,7 +8,7 @@ export enum Theme {
 
 export const LS_THEME_KEY = "theme";
 
-interface ThemeContextValues {
+export interface ThemeContextValues {
   theme: Theme;
   setTheme: Dispatch<SetStateAction<Theme>>;
   toggleTheme: VoidFunction;

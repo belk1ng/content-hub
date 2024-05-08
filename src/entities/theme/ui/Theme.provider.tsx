@@ -1,16 +1,25 @@
 import type { FC, PropsWithChildren } from "react";
 import { useState, useMemo, useEffect } from "react";
 
-import { Theme, ThemeContext, LS_THEME_KEY } from "../config/Theme.context";
+import {
+  Theme,
+  ThemeContext,
+  LS_THEME_KEY,
+  ThemeContextValues,
+} from "../config/Theme.context";
 
-const defaultTheme =
-  (localStorage.getItem(LS_THEME_KEY) as Theme) ??
-  (window.matchMedia &&
-  window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? Theme.DARK
-    : Theme.LIGHT);
+interface ThemeProviderProps extends PropsWithChildren {
+  value?: Partial<ThemeContextValues>;
+}
 
-export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
+export const ThemeProvider: FC<ThemeProviderProps> = ({ children, value }) => {
+  const defaultTheme =
+    (localStorage.getItem(LS_THEME_KEY) as Theme) ??
+    (window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? Theme.DARK
+      : Theme.LIGHT);
+
   const [theme, setTheme] = useState<Theme>(defaultTheme);
 
   useEffect(() => {
@@ -22,12 +31,16 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
   };
 
   const providerValue = useMemo(
-    () => ({
-      theme,
-      setTheme,
-      toggleTheme,
-    }),
-    [theme]
+    () =>
+      Object.assign(
+        {
+          theme,
+          setTheme,
+          toggleTheme,
+        },
+        value
+      ),
+    [theme, value]
   );
 
   return (

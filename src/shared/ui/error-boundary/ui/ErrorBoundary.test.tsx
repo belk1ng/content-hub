@@ -2,9 +2,9 @@ import { render, renderHook, screen } from "@testing-library/react";
 import { useEffect } from "react";
 
 import ErrorBoundary from "./ErrorBoundary";
+import { useThrowAsyncError } from "../lib/useThrowAsyncError";
 
 import withTranslation from "@/shared/lib/test/withTranslation";
-import { useThrowAsyncError } from "../lib/useThrowAsyncError";
 
 const CONSOLE_ERROR = console.error;
 
