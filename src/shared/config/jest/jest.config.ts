@@ -7,7 +7,20 @@ const config: Config = {
   moduleDirectories: ["node_modules"],
   testEnvironment: "jest-environment-jsdom",
   setupFilesAfterEnv: ["<rootDir>/src/shared/config/jest/setupTests.ts"],
-  preset: "ts-jest",
+  transform: {
+    "^.+\\.(t|j)sx?$": [
+      "@swc/jest",
+      {
+        jsc: {
+          transform: {
+            react: {
+              runtime: "automatic",
+            },
+          },
+        },
+      },
+    ],
+  },
   testMatch: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[tj]s?(x)"],
   moduleNameMapper: {
     "\\.svg$": "<rootDir>/src/shared/config/jest/__mocks__/SvgrMock.tsx",

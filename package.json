@@ -14,11 +14,13 @@
     "stylelint-scss-check": "stylelint-config-prettier-scss-check",
     "format": "prettier . --write && npm run fix:ts && npm run fix:styles",
     "lint:all": "npm run lint:ts && npm run lint:styles",
-    "test": "jest --config ./src/shared/config/jest/jest.config.ts"
+    "test": "jest --config ./src/shared/config/jest/jest.config.ts --runInBand"
   },
   "devDependencies": {
     "@eslint/js": "9.2.0",
     "@svgr/webpack": "8.1.0",
+    "@swc/core": "1.5.5",
+    "@swc/jest": "0.2.36",
     "@testing-library/jest-dom": "6.4.5",
     "@testing-library/react": "15.0.7",
     "@types/jest": "29.5.12",
@@ -52,7 +54,6 @@
     "stylelint-config-prettier-scss": "1.0.0",
     "stylelint-config-standard": "^36.0.0",
     "stylelint-config-standard-scss": "13.1.0",
-    "ts-jest": "29.1.2",
     "ts-loader": "9.5.1",
     "ts-node": "10.9.2",
     "typescript": "5.4.5",
