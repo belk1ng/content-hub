@@ -11,7 +11,6 @@ import {
 } from "./_plugins";
 import { config } from "./config";
 
-
 export const plugins: WebpackPluginInstance[] = [
   htmlWebpackPlugin,
   progressPlugin,

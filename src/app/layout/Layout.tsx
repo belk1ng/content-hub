@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import type { FC } from "react";
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 
 import * as classes from "./Layout.module.scss";
@@ -15,8 +15,12 @@ import UnexpectedError from "@/widgets/unexpected-error";
 const Layout: FC = () => {
   const { theme } = useTheme();
 
+  useEffect(() => {
+    document.body.className = `app app_${theme}`;
+  }, [theme]);
+
   return (
-    <div className={clsx(`app app_${theme}`, classes.layout)}>
+    <div className={clsx(classes.layout)}>
       <Sidebar />
       <main className={classes.layout__content}>
         <Suspense fallback={<Loader />}>
