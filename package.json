@@ -16,7 +16,7 @@
     "lint:all": "npm run lint:ts && npm run lint:styles",
     "test": "jest --config ./src/shared/config/jest/jest.config.ts --runInBand",
     "storybook": "storybook dev -p 6006 --config-dir ./src/shared/config/storybook",
-    "build-storybook": "storybook build --config-dir ./src/shared/config/storybook"
+    "storybook:build": "storybook build --config-dir ./src/shared/config/storybook"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.3.4",
