@@ -31,5 +31,3 @@ jobs:
 
       - name: Build production version
         run: npm run build
-      - name: Build storybook
-        run: num run storybook:build
