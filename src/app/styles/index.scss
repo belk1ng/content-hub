@@ -68,6 +68,20 @@ svg * {
 }
 
 .storybook {
+  @include flex-center;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  overflow: auto;
+
+  width: 100vw;
+  height: 100vh;
+  padding: 1rem;
+
   font-family: var(--font-family);
   color: var(--text-primary);
+
+  background: var(--bg-color);
 }

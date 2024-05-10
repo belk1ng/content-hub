@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import Button from "./Button";
-import { DarkThemeDecorator } from "@/shared/config/storybook/decorators";
 
 const meta: Meta<typeof Button> = {
   title: "shared/Button",
@@ -21,15 +20,8 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const LightTheme: Story = {
+export const ButtonStory: Story = {
   args: {
     children: "Button",
   },
-};
-
-export const DarkTheme: Story = {
-  args: {
-    children: "Button",
-  },
-  decorators: [DarkThemeDecorator],
 };

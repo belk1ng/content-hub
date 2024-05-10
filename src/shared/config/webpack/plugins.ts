@@ -7,6 +7,7 @@ import {
   definePlugin,
   hotModuleReplacement,
   bundleAnalyzerPlugin,
+  copyWebpackPlugin,
 } from "./_plugins";
 
 export const plugins: WebpackPluginInstance[] = [
@@ -16,4 +17,5 @@ export const plugins: WebpackPluginInstance[] = [
   definePlugin,
   hotModuleReplacement,
   bundleAnalyzerPlugin,
+  copyWebpackPlugin,
 ];

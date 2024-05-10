@@ -4,6 +4,7 @@ $block: ".nav";
 
 .nav {
   color: var(--white);
+  background-color: var(--main-primary);
 
   &__list {
     @include flex-column;

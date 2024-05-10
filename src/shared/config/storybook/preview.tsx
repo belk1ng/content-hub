@@ -1,11 +1,11 @@
-import type { Preview } from "@storybook/react";
-
 import {
-  TranslationDecorator,
   RouterDecorator,
   StyleDecorator,
-  LightThemeDecorator,
+  ThemeDecorator,
+  TranslationDecorator,
 } from "./decorators";
+
+import { Theme } from "@/entities/theme";
 
 export const globalTypes = {
   locale: {
@@ -20,19 +20,24 @@ export const globalTypes = {
       showName: true,
     },
   },
-};
-
-const preview: Preview = {
-  parameters: {
-    layout: "centered",
+  theme: {
+    name: "Theme",
+    description: "Global theme for components",
+    defaultValue: "light",
+    toolbar: {
+      icon: "circlehollow",
+      items: [
+        { value: Theme.LIGHT, icon: "circlehollow", title: "Light" },
+        { value: Theme.DARK, icon: "circle", title: "Dark" },
+      ],
+      showName: true,
+    },
   },
 };
 
 export const decorators = [
   StyleDecorator,
-  LightThemeDecorator,
+  ThemeDecorator,
   TranslationDecorator,
   RouterDecorator,
 ];
-
-export default preview;
