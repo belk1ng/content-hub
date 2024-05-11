@@ -27,6 +27,9 @@ const config: Config = {
     "\\.s?css$": "<rootDir>/src/shared/config/jest/__mocks__/style.ts",
     "@/(.*)": "<rootDir>/src/$1",
   },
+  globals: {
+    __IS_DEV__: false,
+  },
 };
 
 export default config;
