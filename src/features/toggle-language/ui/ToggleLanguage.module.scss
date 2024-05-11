@@ -1,6 +1,6 @@
 @import "@/app/styles/mixins";
 
-$block: "button.toggle";
+$block: ".toggle";
 
 #{$block} {
   @include square-size(30px);

@@ -48,14 +48,14 @@ $block: ".button";
 
   &_light {
     @include hover {
-      color: var(--button-hover);
+      color: var(--button-lignt-hover-color);
     }
 
-    color: var(--button-normal);
+    color: var(--button-light-normal-color);
     background-color: var(--white);
 
     &:active {
-      color: var(--button-pressed);
+      color: var(--button-light-pressed-color);
     }
   }
 
