@@ -1,20 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
-
-import { counterReducer } from "@/entities/counter";
+import { rootReducer } from "./rootReducer";
 
 export const store = configureStore({
-  reducer: {
-    counter: counterReducer,
-  },
+  reducer: rootReducer,
   devTools: __IS_DEV__,
 });
 
 export const createStore = (initialState?: Partial<RootState>) => {
   return configureStore({
-    reducer: {
-      counter: counterReducer,
-    },
+    reducer: rootReducer,
     preloadedState: initialState,
-    devTools: __IS_DEV__,
   });
 };
