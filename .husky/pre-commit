@@ -1,0 +1,17 @@
+#!/bin/bash
+
+for file in $(git diff --name-only HEAD | grep "^src")
+do
+  git show ":$file" | npx eslint --no-warn-ignored --max-warnings=0 --stdin --stdin-filename "$file"
+  if [ $? -ne 0 ]; then
+    echo "ESLint failed on staged file '$file'. Please check your code and try again. You can run ESLint manually via npm run eslint."
+  fi
+  if [[ "$file" =~ .*\.scss$ ]]; then
+    git show ":$file" | npx stylelint --max-warnings=0 --stdin --stdin-filename "$file"
+    if [ $? -ne 0 ]; then
+      echo "Stylelint failed on staged file '$file'. Please check your code and try again. You can run Stylelint manually via npm run stylelint."
+    fi
+  fi
+done
+
+npm run test
