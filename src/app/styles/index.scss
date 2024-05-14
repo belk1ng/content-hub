@@ -37,6 +37,11 @@ html,
   scroll-behavior: smooth;
 }
 
+fieldset {
+  min-width: 0;
+  border: 0;
+}
+
 svg *[fill] {
   fill: currentcolor;
 }

@@ -28,5 +28,16 @@
   "errors": {
     "global": "Oooops... There is an unexpected error :(",
     "404": "Page not found :("
+  },
+  "login": {
+    "action": "Login",
+    "labels": {
+      "username": "Username",
+      "password": "Password"
+    },
+    "placeholders": {
+      "username": "Enter username",
+      "password": "Enter password"
+    }
   }
 }

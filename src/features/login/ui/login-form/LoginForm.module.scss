@@ -1,0 +1,9 @@
+@import "@/app/styles/mixins";
+
+$block: ".form";
+
+#{$block} {
+  @include flex-column;
+
+  gap: 0.8em;
+}

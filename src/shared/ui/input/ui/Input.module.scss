@@ -1,0 +1,52 @@
+@import "@/app/styles/mixins";
+
+$block: ".input";
+
+#{$block} {
+  color: var(--text-primary);
+
+  &__title {
+    @include font-size-12;
+
+    margin-bottom: 0.333em;
+  }
+
+  &__container {
+    @include font-size-16;
+
+    @include flex-center;
+    gap: 0.5em;
+
+    padding: 0.5em;
+
+    background-color: var(--input-bg-normal);
+    border-radius: 0.5em;
+
+    &:focus-within {
+      background-color: var(--input-bg-pressed);
+      outline: 1px solid;
+    }
+  }
+
+  &__field {
+    width: 100%;
+    color: var(--text-primary);
+    background-color: transparent;
+    border: 0;
+
+    &::placeholder {
+      color: var(--text-secondary-dark);
+    }
+
+    &:focus,
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  &__helper {
+    @include font-size-12;
+
+    margin-top: 0.333em;
+  }
+}

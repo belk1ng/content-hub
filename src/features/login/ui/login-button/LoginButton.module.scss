@@ -1,0 +1,9 @@
+@import "@/app/styles/mixins";
+
+$block: ".login";
+
+#{$block} {
+  @include square-size(27px);
+
+  color: var(--text-primary);
+}
