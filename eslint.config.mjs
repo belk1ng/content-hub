@@ -21,6 +21,11 @@ export default [
       prettier: eslintPluginPrettier,
       i18next: i18nPlugin,
     },
+    settings: {
+      react: {
+        version: "detect",
+      },
+    },
     rules: {
       "@typescript-eslint/no-unused-vars": ["warn", { varsIgnorePattern: "_" }],
       "i18next/no-literal-string": "error",

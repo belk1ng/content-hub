@@ -11,6 +11,7 @@
     "lint:ts": "eslint ./src/**",
     "fix:ts": "eslint ./src/** --fix",
     "lint:styles": "stylelint \"**/*.scss\"",
+    "lint:staged": "eslint --no-warn-ignored $(git diff --name-only HEAD | grep \"src[/]\\|src$\" | xargs)",
     "fix:styles": "stylelint --fix \"**/*.scss\"",
     "stylelint-scss-check": "stylelint-config-prettier-scss-check",
     "format": "prettier . --write && npm run fix:ts && npm run fix:styles",

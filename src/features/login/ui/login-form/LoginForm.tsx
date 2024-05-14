@@ -11,6 +11,7 @@ const LoginForm: FC = () => {
 
   return (
     <form className={classes.form}>
+      <p>Hello world</p>
       <Input
         label={t("login.labels.username")}
         name="username"

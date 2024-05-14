@@ -15,10 +15,9 @@ $block: ".input";
     @include font-size-16;
 
     @include flex-center;
+
     gap: 0.5em;
-
     padding: 0.5em;
-
     background-color: var(--input-bg-normal);
     border-radius: 0.5em;
 
