@@ -26,6 +26,7 @@
     "about": "About"
   },
   "errors": {
+    "api": "Unexpected error",
     "global": "Oooops... There is an unexpected error :(",
     "404": "Page not found :("
   },

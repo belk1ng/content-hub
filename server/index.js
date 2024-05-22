@@ -36,25 +36,38 @@ function verifyToken(token) {
   );
 }
 
-function isAuthenticated({ email, password }) {
+function isAuthenticated({ username, password }) {
   return (
-    userDb.users.findIndex(
-      (user) => user.email === email && user.password === password
-    ) !== -1
+    userDb.users.find(
+      (user) => user.username === username && user.password === password
+    ) ?? false
   );
 }
 
+function prepareUser(user) {
+  const prepared = { ...user };
+  delete prepared["password"];
+
+  return prepared;
+}
+
 server.post("/auth/register", (req, res) => {
-  const { email, password } = req.body;
-  if (isAuthenticated({ email, password }) === true) {
+  const { username, password } = req.body;
+  if (isAuthenticated({ username, password })) {
     const status = 401;
-    const message = "Email and Password already exist";
+    const message = "Username and Password already exist";
     res.status(status).json({ status, message });
     return;
   }
 
   const lastUserId = userDb.users[userDb.users.length - 1]?.id ?? 0;
-  userDb.users.push({ id: lastUserId + 1, email: email, password: password });
+  const newUser = {
+    id: lastUserId + 1,
+    username: username,
+    password: password,
+  };
+
+  userDb.users.push(newUser);
   fs.writeFileSync(USERS_DB_PATH, JSON.stringify(userDb), (err, result) => {
     if (err) {
       const status = 401;
@@ -64,23 +77,28 @@ server.post("/auth/register", (req, res) => {
     }
   });
 
-  const access_token = createToken({ email, password });
-  const refresh_token = createRefreshToken({ email, password });
-  res.status(200).json({ access_token, refresh_token });
+  const access_token = createToken({ username, password });
+  const refresh_token = createRefreshToken({ username, password });
+  const user = prepareUser(newUser);
+
+  res.status(200).json({ access_token, refresh_token, ...user });
 });
 
 server.post("/auth/login", (req, res) => {
-  const { email, password } = req.body;
-  if (isAuthenticated({ email, password }) === false) {
+  const { username, password } = req.body;
+  const possibleUser = isAuthenticated({ username, password });
+  if (possibleUser === false) {
     const status = 401;
-    const message = "Incorrect email or password";
+    const message = "Incorrect username or password";
     res.status(status).json({ status, message });
     return;
   }
 
-  const access_token = createToken({ email, password });
-  const refresh_token = createRefreshToken({ email, password });
-  res.status(200).json({ access_token, refresh_token });
+  const access_token = createToken({ username, password });
+  const refresh_token = createRefreshToken({ username, password });
+  const user = prepareUser(possibleUser);
+
+  res.status(200).json({ access_token, refresh_token, ...user });
 });
 
 server.post("/auth/refresh", (req, res) => {
@@ -94,16 +112,16 @@ server.post("/auth/refresh", (req, res) => {
 
   try {
     const decoded = jwt.verify(refresh_token, SECRET_KEY);
-    const { email, password } = decoded;
-    if (!isAuthenticated({ email, password })) {
+    const { username, password } = decoded;
+    if (!isAuthenticated({ username, password })) {
       const status = 401;
       const message = "Invalid refresh token";
       res.status(status).json({ status, message });
       return;
     }
 
-    const access_token = createToken({ email, password });
-    const refresh_token = createRefreshToken({ email, password });
+    const access_token = createToken({ username, password });
+    const refresh_token = createRefreshToken({ username, password });
     res.status(200).json({ access_token, refresh_token });
   } catch (err) {
     const status = 401;

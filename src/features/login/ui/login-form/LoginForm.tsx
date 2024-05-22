@@ -1,29 +1,78 @@
-import type { FC } from "react";
+import type { FC, SyntheticEvent } from "react";
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 import * as classes from "./LoginForm.module.scss";
+import {
+  loginActions,
+  loginPasswordSelector,
+  loginUsernameSelector,
+  login,
+  loginSelector,
+} from "../../model";
 
+import { useAppDispatch, useAppSelector } from "@/shared/model";
 import Button from "@/shared/ui/button";
 import Input from "@/shared/ui/input";
 
 const LoginForm: FC = () => {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    return () => {
+      dispatch(loginActions.resetState());
+    };
+  }, [dispatch]);
+
   const { t } = useTranslation();
 
+  const { error, isLoading } = useAppSelector(loginSelector);
+
+  const username = useAppSelector(loginUsernameSelector);
+
+  const password = useAppSelector(loginPasswordSelector);
+
+  const handleChangeUsername = (value: string) => {
+    dispatch(loginActions.setUsername(value));
+  };
+
+  const handleChangePassword = (value: string) => {
+    dispatch(loginActions.setPassword(value));
+  };
+
+  const onSubmit = (event: SyntheticEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    dispatch(
+      login({
+        username,
+        password,
+      })
+    );
+  };
+
   return (
-    <form className={classes.form}>
+    <form className={classes.form} onSubmit={onSubmit}>
+      {error && <p className={classes.form__error}>{error}</p>}
       <Input
         label={t("login.labels.username")}
         name="username"
+        onChange={handleChangeUsername}
         placeholder={t("login.placeholders.username")}
         type="text"
+        value={username}
       />
       <Input
         label={t("login.labels.password")}
         name="password"
+        onChange={handleChangePassword}
         placeholder={t("login.placeholders.password")}
         type="password"
+        value={password}
       />
-      <Button type="submit">{t("login.action")}</Button>
+      <Button disabled={isLoading} type="submit">
+        {t("login.action")}
+      </Button>
     </form>
   );
 };

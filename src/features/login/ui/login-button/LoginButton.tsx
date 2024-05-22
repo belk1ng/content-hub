@@ -25,7 +25,7 @@ const LoginButton: FC = () => {
         <LoginIcon />
       </Button>
       <Modal isOpen={modalOpen} onClose={onModalClose} portalId="login-form">
-        <LoginForm />
+        <LoginForm key={modalOpen.toString()} />
       </Modal>
     </>
   );

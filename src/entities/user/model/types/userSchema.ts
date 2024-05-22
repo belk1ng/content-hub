@@ -1,8 +1,10 @@
 export interface User {
-  id: string;
+  id: number;
   username: string;
+  access_token: string;
+  refresh_token: string;
 }
 
 export interface UserSchema {
-  authData?: User;
+  user?: User;
 }

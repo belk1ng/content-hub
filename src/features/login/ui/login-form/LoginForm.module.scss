@@ -6,4 +6,11 @@ $block: ".form";
   @include flex-column;
 
   gap: 0.8em;
+
+  &__error {
+    @include font-size-14;
+
+    font-weight: 600;
+    color: var(--accent-primary);
+  }
 }
