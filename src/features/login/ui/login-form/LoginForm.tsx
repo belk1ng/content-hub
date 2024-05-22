@@ -7,10 +7,13 @@ import {
   loginActions,
   loginPasswordSelector,
   loginUsernameSelector,
+  loginErrorSelector,
+  loginLoadingSelector,
   login,
-  loginSelector,
+  loginReducer,
 } from "../../model";
 
+import ModuleLoader from "@/shared/lib/module-loader";
 import { useAppDispatch, useAppSelector } from "@/shared/model";
 import Button from "@/shared/ui/button";
 import Input from "@/shared/ui/input";
@@ -26,7 +29,9 @@ const LoginForm: FC = () => {
 
   const { t } = useTranslation();
 
-  const { error, isLoading } = useAppSelector(loginSelector);
+  const error = useAppSelector(loginErrorSelector);
+
+  const isLoading = useAppSelector(loginLoadingSelector);
 
   const username = useAppSelector(loginUsernameSelector);
 
@@ -52,28 +57,30 @@ const LoginForm: FC = () => {
   };
 
   return (
-    <form className={classes.form} onSubmit={onSubmit}>
-      {error && <p className={classes.form__error}>{error}</p>}
-      <Input
-        label={t("login.labels.username")}
-        name="username"
-        onChange={handleChangeUsername}
-        placeholder={t("login.placeholders.username")}
-        type="text"
-        value={username}
-      />
-      <Input
-        label={t("login.labels.password")}
-        name="password"
-        onChange={handleChangePassword}
-        placeholder={t("login.placeholders.password")}
-        type="password"
-        value={password}
-      />
-      <Button disabled={isLoading} type="submit">
-        {t("login.action")}
-      </Button>
-    </form>
+    <ModuleLoader reducer={loginReducer} reducerName="login">
+      <form className={classes.form} onSubmit={onSubmit}>
+        {error && <p className={classes.form__error}>{error}</p>}
+        <Input
+          label={t("login.labels.username")}
+          name="username"
+          onChange={handleChangeUsername}
+          placeholder={t("login.placeholders.username")}
+          type="text"
+          value={username}
+        />
+        <Input
+          label={t("login.labels.password")}
+          name="password"
+          onChange={handleChangePassword}
+          placeholder={t("login.placeholders.password")}
+          type="password"
+          value={password}
+        />
+        <Button disabled={isLoading} type="submit">
+          {t("login.action")}
+        </Button>
+      </form>
+    </ModuleLoader>
   );
 };
 

@@ -44,15 +44,23 @@ const Modal: FC<ModalProps> = ({ isOpen, onClose, portalId, children }) => {
     };
   }, [isOpen, onEscDown]);
 
-  return (
+  useEffect(() => {
+    let timeout: NodeJS.Timeout;
+
+    if (isOpen) {
+      timeout = setTimeout(() => {
+        modalRef.current?.classList.add(classes.modal_open);
+      });
+    }
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [isOpen]);
+
+  return isOpen ? (
     <Portal containerId={portalId}>
-      <section
-        className={clsx(classes.modal, {
-          [classes.modal_open]: isOpen,
-        })}
-        ref={modalRef}
-        role="dialog"
-      >
+      <section className={clsx(classes.modal)} ref={modalRef} role="dialog">
         <div
           className={classes.modal__overlay}
           data-testid="overlay"
@@ -64,7 +72,7 @@ const Modal: FC<ModalProps> = ({ isOpen, onClose, portalId, children }) => {
         </div>
       </section>
     </Portal>
-  );
+  ) : null;
 };
 
 export default Modal;

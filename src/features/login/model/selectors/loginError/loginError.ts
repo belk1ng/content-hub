@@ -2,7 +2,7 @@ import { createSelector } from "@reduxjs/toolkit";
 
 import { loginSelector } from "../login";
 
-export const loginUsernameSelector = createSelector(
+export const loginErrorSelector = createSelector(
   loginSelector,
-  (selector) => selector?.username ?? ""
+  (selector) => selector?.error ?? ""
 );
