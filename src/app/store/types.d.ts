@@ -4,8 +4,9 @@ import type {
   ReducersMapObject,
   UnknownAction,
 } from "@reduxjs/toolkit";
+import type { AxiosInstance } from "axios";
 
-import { store } from "./config/store";
+import { createStore } from "./config/store";
 
 import type { CounterSchema } from "@/entities/counter";
 import { ProfileSchema } from "@/entities/profile";
@@ -33,5 +34,14 @@ declare global {
     reducerManager: ReducerManager;
   }
 
-  type AppDispatch = typeof store.dispatch;
+  interface ThunkExtraArgs {
+    http: AxiosInstance;
+  }
+
+  interface ThunkConfig<Error = string> {
+    rejectValue: Error;
+    extra: ThunkExtraArgs;
+  }
+
+  type AppDispatch = ReturnType<typeof createStore>["dispatch"];
 }

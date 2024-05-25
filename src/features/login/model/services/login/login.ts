@@ -1,8 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
 
-import { userActions } from "@/entities/user";
 import type { User } from "@/entities/user";
+import { userActions } from "@/entities/user";
 import i18nProduction from "@/shared/config/i18n/i18n.production";
 
 interface LoginSubmitValues {
@@ -10,24 +9,15 @@ interface LoginSubmitValues {
   password: string;
 }
 
-export const login = createAsyncThunk<
-  User,
-  LoginSubmitValues,
-  {
-    rejectValue: string;
-  }
->(
+export const login = createAsyncThunk<User, LoginSubmitValues, ThunkConfig>(
   "login/loginSubmit",
-  async ({ username, password }, { rejectWithValue, dispatch }) => {
+  async ({ username, password }, { rejectWithValue, dispatch, extra }) => {
     try {
-      // TODO: Create an axios instance
-      const response = await axios.post<User>(
-        "http://localhost:8000/auth/login",
-        {
-          username,
-          password,
-        }
-      );
+      const { http } = extra;
+      const response = await http.post<User>("/auth/login", {
+        username,
+        password,
+      });
 
       if (!response.data) {
         throw new Error(i18nProduction.t("errors.api"));

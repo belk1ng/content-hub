@@ -3,8 +3,13 @@ import { configureStore } from "@reduxjs/toolkit";
 import { createReducerManager } from "@/app/store/config/reducerManager";
 import { counterReducer } from "@/entities/counter";
 import { userReducer } from "@/entities/user";
+import { http } from "@/shared/api";
 
-export const createStore = (initialState?: Partial<RootState>) => {
+interface StoreArgs {
+  initialState?: Partial<RootState>;
+}
+
+export const createStore = ({ initialState }: StoreArgs) => {
   const staticReducers = {
     counter: counterReducer,
     user: userReducer,
@@ -15,6 +20,14 @@ export const createStore = (initialState?: Partial<RootState>) => {
   const store = configureStore({
     reducer: reducerManager.reduce,
     preloadedState: initialState,
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({
+        thunk: {
+          extraArgument: {
+            http,
+          },
+        },
+      }),
     devTools: __IS_DEV__,
   });
 
@@ -23,5 +36,3 @@ export const createStore = (initialState?: Partial<RootState>) => {
 
   return store;
 };
-
-export const store = createStore();
