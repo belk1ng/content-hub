@@ -1,5 +1,5 @@
 import type { FC, SyntheticEvent } from "react";
-import { useEffect, useCallback } from "react";
+import { useEffect, useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
 import * as classes from "./LoginForm.module.scss";
@@ -28,6 +28,13 @@ const LoginForm: FC = () => {
   }, [dispatch]);
 
   const { t } = useTranslation();
+
+  const reducers = useMemo(
+    () => ({
+      login: loginReducer,
+    }),
+    []
+  );
 
   const error = useAppSelector(loginErrorSelector);
 
@@ -63,7 +70,7 @@ const LoginForm: FC = () => {
   };
 
   return (
-    <ModuleLoader reducer={loginReducer} reducerName="login">
+    <ModuleLoader clearOnUnmount reducers={reducers}>
       <form className={classes.form} onSubmit={onSubmit}>
         {error && <p className={classes.form__error}>{error}</p>}
         <Input
