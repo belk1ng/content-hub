@@ -7,16 +7,16 @@ import type { ModalProps } from "./Modal.props";
 
 import Portal from "@/shared/ui/portal";
 
+const ANIMATION_DELAY_MS = 150;
+
 const Modal: FC<ModalProps> = ({ isOpen, onClose, portalId, children }) => {
   const modalRef = useRef<HTMLDivElement>(null);
 
   const handleCloseModal = useCallback(() => {
-    const ANIMATION_DELAY_MS = 150;
-
-    modalRef.current.classList.add(classes.modal_close);
+    modalRef.current?.classList?.add(classes.modal_close);
 
     setTimeout(() => {
-      modalRef.current.classList.remove(classes.modal_close);
+      modalRef.current?.classList?.remove(classes.modal_close);
       onClose();
     }, ANIMATION_DELAY_MS);
   }, [onClose]);
@@ -48,9 +48,10 @@ const Modal: FC<ModalProps> = ({ isOpen, onClose, portalId, children }) => {
     let timeout: NodeJS.Timeout;
 
     if (isOpen) {
+      // Note: Bullshit, but it works
       timeout = setTimeout(() => {
         modalRef.current?.classList.add(classes.modal_open);
-      });
+      }, 50);
     }
 
     return () => {

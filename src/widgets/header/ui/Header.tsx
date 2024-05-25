@@ -1,4 +1,5 @@
 import type { FC } from "react";
+import { memo } from "react";
 
 import * as classes from "./Header.module.scss";
 
@@ -26,4 +27,4 @@ const Header: FC = () => {
   );
 };
 
-export default Header;
+export default memo(Header);

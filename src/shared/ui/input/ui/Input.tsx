@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { memo } from "react";
 import type { ChangeEvent, FC } from "react";
 
 import * as classes from "./Input.module.scss";
@@ -38,4 +39,4 @@ const Input: FC<InputProps> = ({
   );
 };
 
-export default Input;
+export default memo(Input);

@@ -1,5 +1,5 @@
 import type { FC, SyntheticEvent } from "react";
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 
 import * as classes from "./LoginForm.module.scss";
@@ -37,13 +37,19 @@ const LoginForm: FC = () => {
 
   const password = useAppSelector(loginPasswordSelector);
 
-  const handleChangeUsername = (value: string) => {
-    dispatch(loginActions.setUsername(value));
-  };
+  const handleChangeUsername = useCallback(
+    (value: string) => {
+      dispatch(loginActions.setUsername(value));
+    },
+    [dispatch]
+  );
 
-  const handleChangePassword = (value: string) => {
-    dispatch(loginActions.setPassword(value));
-  };
+  const handleChangePassword = useCallback(
+    (value: string) => {
+      dispatch(loginActions.setPassword(value));
+    },
+    [dispatch]
+  );
 
   const onSubmit = (event: SyntheticEvent<HTMLFormElement>) => {
     event.preventDefault();

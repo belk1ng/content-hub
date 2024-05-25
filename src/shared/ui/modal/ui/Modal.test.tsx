@@ -25,7 +25,9 @@ describe("Modal", () => {
     );
 
     const modal = await screen.findByRole("dialog");
-    expect(modal).toHaveClass("modal_open");
+    await waitFor(() => {
+      expect(modal).toHaveClass("modal_open");
+    });
   });
 
   test("Should call onClose after overlay clicked", () => {

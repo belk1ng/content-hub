@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { memo } from "react";
 import type { FC } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -25,4 +26,4 @@ const Sidebar: FC<SidebarProps> = ({ className, ...rest }) => {
   );
 };
 
-export default Sidebar;
+export default memo(Sidebar);
