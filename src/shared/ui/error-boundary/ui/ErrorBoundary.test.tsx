@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import ErrorBoundary from "./ErrorBoundary";
 import { useThrowAsyncError } from "../lib/useThrowAsyncError";
 
-import withTranslation from "@/shared/lib/test/withTranslation";
+import TestProviders from "@/shared/lib/test/test-providers";
 
 const CONSOLE_ERROR = console.error;
 
@@ -19,11 +19,12 @@ describe("ErrorBoundary", () => {
 
   test("Should render children when everything is fine", () => {
     render(
-      withTranslation(
-        <ErrorBoundary>
-          <p>Everything is fine</p>
-        </ErrorBoundary>
-      )
+      <ErrorBoundary>
+        <p>Everything is fine</p>
+      </ErrorBoundary>,
+      {
+        wrapper: TestProviders,
+      }
     );
 
     expect(screen.getByText("Everything is fine")).toBeInTheDocument();
@@ -35,11 +36,12 @@ describe("ErrorBoundary", () => {
     };
 
     render(
-      withTranslation(
-        <ErrorBoundary fallback={<h1>Fallback</h1>}>
-          <ChildWithError />
-        </ErrorBoundary>
-      )
+      <ErrorBoundary fallback={<h1>Fallback</h1>}>
+        <ChildWithError />
+      </ErrorBoundary>,
+      {
+        wrapper: TestProviders,
+      }
     );
 
     expect(screen.getByText("Fallback")).toBeInTheDocument();
@@ -64,11 +66,12 @@ describe("ErrorBoundary", () => {
     };
 
     render(
-      withTranslation(
-        <ErrorBoundary fallback={<p>Fallback :(</p>}>
-          <ChildWithAsyncError />
-        </ErrorBoundary>
-      )
+      <ErrorBoundary fallback={<p>Fallback :(</p>}>
+        <ChildWithAsyncError />
+      </ErrorBoundary>,
+      {
+        wrapper: TestProviders,
+      }
     );
 
     expect(screen.getByText("Fallback :(")).toBeInTheDocument();

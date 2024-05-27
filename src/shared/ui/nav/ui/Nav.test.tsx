@@ -1,31 +1,24 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { MemoryRouter } from "react-router-dom";
 
 import Nav from "./Nav";
 
 import { navConfig } from "@/shared/config/nav";
-import withTranslation from "@/shared/lib/test/withTranslation";
+import TestProviders from "@/shared/lib/test/test-providers";
 
 describe("Nav", () => {
   test("Should render nav items", () => {
-    render(
-      withTranslation(
-        <MemoryRouter>
-          <Nav links={navConfig} />
-        </MemoryRouter>
-      )
-    );
+    render(<Nav links={navConfig} />, {
+      wrapper: TestProviders,
+    });
 
     expect(screen.getAllByRole("link")).toHaveLength(4);
   });
 
   test("Should highlight the active nav item", () => {
     render(
-      withTranslation(
-        <MemoryRouter initialEntries={[navConfig[1].to]}>
-          <Nav links={navConfig} />
-        </MemoryRouter>
-      )
+      <TestProviders routerProps={{ initialEntries: [navConfig[1].to] }}>
+        <Nav links={navConfig} />
+      </TestProviders>
     );
 
     const navItem = screen.getByRole("link", { name: /articles/ });
@@ -34,13 +27,9 @@ describe("Nav", () => {
   });
 
   test("Should highlight link after navigation", () => {
-    render(
-      withTranslation(
-        <MemoryRouter>
-          <Nav links={navConfig} />
-        </MemoryRouter>
-      )
-    );
+    render(<Nav links={navConfig} />, {
+      wrapper: TestProviders,
+    });
 
     const prevActiveLink = screen.getByRole("link", { name: /home/ });
     expect(prevActiveLink).toHaveClass("nav__item_active");

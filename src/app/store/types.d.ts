@@ -9,7 +9,7 @@ import type { AxiosInstance } from "axios";
 import { createStore } from "./config/store";
 
 import type { CounterSchema } from "@/entities/counter";
-import { ProfileSchema } from "@/entities/profile";
+import type { ProfileSchema } from "@/entities/profile";
 import type { UserSchema } from "@/entities/user";
 import type { LoginSchema } from "@/features/login/model";
 
