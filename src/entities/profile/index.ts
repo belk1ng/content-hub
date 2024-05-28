@@ -1,2 +1,10 @@
 export type { Profile, ProfileSchema } from "./model/types/profileSchema";
 export { profileReducer, profileActions } from "./model/slice/profileSlice";
+export { getProfile } from "./model/services";
+export { profileSelector } from "./model/selectors/profile";
+export { profileLoadingSelector } from "./model/selectors/profileLoading";
+export { profileErrorSelector } from "./model/selectors/profileError";
+export { profileDataSelector } from "./model/selectors/profileData";
+export { profileFirstNameSelector } from "./model/selectors/profileFirstName";
+export { profileLastNameSelector } from "./model/selectors/profileLastName";
+export { default } from "./ui/ProfileCard";

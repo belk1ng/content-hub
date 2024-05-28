@@ -1,0 +1,1 @@
+export { profileDataSelector } from "./profileData";

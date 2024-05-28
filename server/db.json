@@ -28,5 +28,15 @@
       "text": "Repeat",
       "completed": false
     }
-  ]
+  ],
+  "profile": {
+    "firstName": "Dmitry",
+    "lastName": "Belkin",
+    "age": 22,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Moscow",
+    "username": "belk1ng",
+    "avatar": "https://avatars.githubusercontent.com/u/62993219?v=4"
+  }
 }
